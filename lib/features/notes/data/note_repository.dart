@@ -69,11 +69,8 @@ class MisskeyNoteRepository implements NoteRepository {
     String noteId, {
     int limit = 10,
     String? untilId,
-  }) => client.notes.childrenPage(
-    noteId: noteId,
-    limit: limit,
-    untilId: untilId,
-  );
+  }) =>
+      client.notes.childrenPage(noteId: noteId, limit: limit, untilId: untilId);
 
   @override
   Future<Note> react(String noteId, String reaction) async {

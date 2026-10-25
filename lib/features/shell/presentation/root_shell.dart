@@ -138,11 +138,7 @@ class _RootShellState extends ConsumerState<RootShell> {
         return DetailPanelScope(
           coordinator: coordinator,
           child: ShellChrome(
-            selectedIndex: _selectedVisibleIndex(
-              config,
-              current,
-              width >= 840,
-            ),
+            selectedIndex: _selectedVisibleIndex(config, current, width >= 840),
             onDestinationSelected: (tab) => _select(shell, tab),
             onProfile: () => _select(shell, AppTab.profile),
             onSettings: () {
@@ -237,8 +233,7 @@ class ShellChrome extends ConsumerWidget {
       return Scaffold(
         body: child,
         bottomNavigationBar: NavigationBar(
-          selectedIndex:
-              (selectedIndex ?? 0).clamp(0, destinations.length - 1),
+          selectedIndex: (selectedIndex ?? 0).clamp(0, destinations.length - 1),
           onDestinationSelected: (index) {
             onDestinationSelected(visible[index]);
           },
@@ -251,9 +246,9 @@ class ShellChrome extends ConsumerWidget {
                         avatarUrl: destination.avatarUrl,
                         size: 28,
                         showStatus: true,
-                        ringColor: Theme.of(
-                          context,
-                        ).colorScheme.surfaceContainer,
+                        ringColor: Theme.of(context)
+                            .colorScheme
+                            .surfaceContainer,
                       ),
                 label: destination.avatarUrl == null
                     ? destination.label
@@ -285,6 +280,7 @@ class ShellChrome extends ConsumerWidget {
       ),
     );
   }
+
   IconData _icon(AppTab tab) => switch (tab) {
     AppTab.home => Icons.home_outlined,
     AppTab.notifications => Icons.notifications_outlined,

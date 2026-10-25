@@ -233,8 +233,7 @@ class _RepliesSection extends StatelessWidget {
             ),
           )
         else
-          for (final reply in state.replies)
-            _ReplyTile(note: reply),
+          for (final reply in state.replies) _ReplyTile(note: reply),
         if (state.repliesHasMore)
           Center(
             child: TextButton(
@@ -265,7 +264,8 @@ class _ReplyTile extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             GestureDetector(
-              onTap: () => openDetail(context, UserDetailLocation(note.user.id)),
+              onTap: () =>
+                  openDetail(context, UserDetailLocation(note.user.id)),
               child: CircleAvatar(
                 radius: 16,
                 backgroundImage: NetworkImage(note.user.avatarUrl),
@@ -357,9 +357,10 @@ class _ReplyTile extends StatelessWidget {
                         const SizedBox(width: 12),
                         Text(
                           '${compactCount(context, note.repliesCount)} ${l10n.reply}',
-                          style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                            color: Theme.of(context).colorScheme.primary,
-                          ),
+                          style: Theme.of(context).textTheme.bodySmall
+                              ?.copyWith(
+                                color: Theme.of(context).colorScheme.primary,
+                              ),
                         ),
                       ],
                     ],

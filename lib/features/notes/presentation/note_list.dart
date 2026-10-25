@@ -41,14 +41,7 @@ class NoteList extends ConsumerWidget {
             12.0,
             constraints.maxWidth - appMaxContentWidth - 12.0,
           );
-          return _content(
-            context,
-            state,
-            controller,
-            l10n,
-            12.0,
-            horizontal,
-          );
+          return _content(context, state, controller, l10n, 12.0, horizontal);
         },
       ),
     );

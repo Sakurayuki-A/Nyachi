@@ -340,9 +340,9 @@ class _ChatThreadPageState extends ConsumerState<ChatThreadPage> {
                         vertical: 4,
                       ),
                       decoration: BoxDecoration(
-                        color: Theme.of(
-                          context,
-                        ).colorScheme.surfaceContainerHigh,
+                        color: Theme.of(context)
+                            .colorScheme
+                            .surfaceContainerHigh,
                         borderRadius: BorderRadius.circular(28),
                       ),
                       child: Row(
@@ -406,9 +406,9 @@ class _ChatThreadPageState extends ConsumerState<ChatThreadPage> {
                                           l10n.messageHint,
                                           key: const ValueKey('hint'),
                                           style: TextStyle(
-                                            color: Theme.of(
-                                              context,
-                                            ).colorScheme.onSurfaceVariant,
+                                            color: Theme.of(context)
+                                                .colorScheme
+                                                .onSurfaceVariant,
                                           ),
                                         ),
                                 ),

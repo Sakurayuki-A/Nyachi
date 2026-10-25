@@ -308,8 +308,7 @@ class _ImageViewerState extends State<_ImageViewer> {
 
   void _rootPointerMove(PointerEvent event) {
     final start = _pressStart[event.pointer];
-    if (start != null &&
-        (event.localPosition - start).distance > kTouchSlop) {
+    if (start != null && (event.localPosition - start).distance > kTouchSlop) {
       _pressStart.remove(event.pointer);
     }
   }
@@ -350,8 +349,7 @@ class _ImageViewerState extends State<_ImageViewer> {
                       child: ClipRRect(
                         borderRadius: BorderRadius.circular(16),
                         child: Listener(
-                          onPointerDown: (event) =>
-                              _onImage.add(event.pointer),
+                          onPointerDown: (event) => _onImage.add(event.pointer),
                           child: CachedNetworkImage(
                             imageUrl: widget.images[index].url,
                             fit: BoxFit.contain,
@@ -376,9 +374,8 @@ class _ImageViewerState extends State<_ImageViewer> {
                       shape: const CircleBorder(),
                       clipBehavior: Clip.antiAlias,
                       child: IconButton(
-                        tooltip: MaterialLocalizations.of(
-                          context,
-                        ).closeButtonTooltip,
+                        tooltip: MaterialLocalizations.of(context)
+                            .closeButtonTooltip,
                         onPressed: () => Navigator.pop(context),
                         icon: const Icon(Icons.close, color: Colors.white),
                       ),
